@@ -15,10 +15,4 @@ class MainTest(TestCase):
         response = Client().get('/skibidi/')
         self.assertEqual(response.status_code, 404)
 
-    def test_strong_mood_user(self):
-        mood = Product.objects.create(
-          name="Happy",
-          description = "I'm happy, even though my clothes are soaked from the rain :(",
-          price = 8,
-        )
-        #self.assertTrue(mood.is_mood_strong)
+    

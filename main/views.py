@@ -2,9 +2,10 @@ from django.shortcuts import render
 
 def show_main(request):
     context = {
-        'App Name' : 'MIAU',
-        'Name': 'Catherine Aurellia',
-        'Class': 'PBP KKI'
+        'id': 'Catherine Aurellia - KKI',
+        'name': 'MIAU',
+        'price': '50.000',
+        'description': 'All karaoke packages are priced at Rp. 50.000/hour'
     }
 
     return render(request, "main.html", context)
