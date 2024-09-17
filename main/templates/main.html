@@ -11,20 +11,19 @@
 <h5>Description: </h5>
 <p>{{ description }}</p>
 
-{% if not add_package %}
+{% if not product_entries %}
 <p>There are no package data in MIAU.</p>
 {% else %}
 <table>
   <tr>
-    <th>Guest Name</th>
-    <th>Date</th>
-    <th>Time</th>
-    <th>Package</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Description</th>
   </tr>
 
   {% comment %} This is how to display product data
   {% endcomment %} 
-  {% for product_entry in add_package %}
+  {% for product_entry in product_entries %}
   <tr>
     <td>{{product_entry.name}}</td>
     <td>{{product_entry.price}}</td>
