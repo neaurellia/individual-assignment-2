@@ -1,9 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
 <h1>MIAU</h1>
-
 
 <h5>Name and Class: </h5>
 <p>{{ id }}<p>
+
 <h5>Price: </h5>
-<p>{{ price }}<p>
+<p>{{ price }}</p>
+
 <h5>Description: </h5>
-<p>{{ description }}<p>
+<p>{{ description }}</p>
+
+{% if not add_package %}
+<p>There are no package data in MIAU.</p>
+{% else %}
+<table>
+  <tr>
+    <th>Guest Name</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Package</th>
+  </tr>
+
+  {% comment %} This is how to display product data
+  {% endcomment %} 
+  {% for product_entry in add_package %}
+  <tr>
+    <td>{{product_entry.name}}</td>
+    <td>{{product_entry.price}}</td>
+    <td>{{product_entry.time}}</td>
+    <td>{{product_entry.description}}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endif %}
+
+<br />
+
+<a href="{% url 'main:create_product_entry' %}">
+  <button>Add Package</button>
+</a>
+{% endblock content %}
