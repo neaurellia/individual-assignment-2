@@ -79,6 +79,12 @@ Why Do We Need is_valid()?
 
 5. Compare them with tutorial 2 and implement them. First I implemented the Skeleton of a View, then changed the Primary Key from integer to UUID, then I created as form input data and displayed data on HTML. Next I returned data in both XML and JSON format and did it based on an ID, then I used Postman as a data viewer and deployed to PWS
 
+![WhatsApp Image 2024-09-18 at 11 21 39_39d33e01](https://github.com/user-attachments/assets/0d7c5adb-a8ab-4c6a-a41e-a48a0ff8ca58)
+![WhatsApp Image 2024-09-18 at 11 22 04_87fd11b8](https://github.com/user-attachments/assets/a1c0bdab-6607-4e32-8ac7-ff4706507863)
+![WhatsApp Image 2024-09-18 at 11 22 45_e458d2f4](https://github.com/user-attachments/assets/7fcac5c7-78f9-4ca2-99db-c6fe57466c67)
+![WhatsApp Image 2024-09-18 at 11 23 14_1c26978f](https://github.com/user-attachments/assets/c5ea2597-bafb-478f-970e-651ba471b8c8)
+
+
 
 
 
