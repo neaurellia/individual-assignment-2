@@ -1,3 +1,52 @@
+assignment 4
+1. HttpResponseRedirect() is a class in Django that is used to perform a manual redirect to a different URL. It takes a URL as an argument and sends a response telling the browser to navigate to that URL.
+
+redirect() is a convenience function provided by Django that abstracts away the lower-level HttpResponseRedirect(). It can accept not only a URL string but also a view name or even an object, making it more flexible.
+
+2. In Django, a foreign key relationship can link MoodEntry model and User model as so:
+user = models.ForeignKey(User, on_delete=models.CASCADE)
+This creates a relationship where each mmood entry is related to a specific user to retrieve all mood entries made by user.
+
+3. Authentication: process of verifying who a user is
+Authorization: process of determining what an authenticated user is allowed to do
+
+4. Django stores data on the server and a session ID in a cookie on the user's browser. Every time the user makes a request, the session ID is sent along with it, allowing Django to recognize the user as logged in.
+
+Other uses of cookies:
+- Tracking user preferences: Cookies can be used to store user preferences, such as language settings or dark mode preferences.
+- Cart functionality: In e-commerce sites, cookies can track the items added to a user's shopping cart.
+- Analytics and tracking: Cookies are used for analytics purposes to track user behavior and activity on a website.
+
+Not all cookies are safe, especially when dealing with sensitive information. 
+
+5. First I implemented function and registration forms by adding the registration form and created the register mechanism. This is done by editing views.py and urls.py and creating register.html.
+
+Next, I implemented a login function by importing authenticate, login and AuthenticationForm (built-in Django functions) in views.py and adding a login_user function to authenticate users to log in. Then, I created login.html and edited urls.py as needed.
+
+After that, I implemented a logout function by editing and importing logout in views.py. I also implemented the logout mechanism by creating a logout_user function, then I edited main.html so that it would link to the URL based on app_name and name defined in urls.py. I then edited urls.py as needed
+
+I also restricted access to the main page then used data from cookies by importing HttpResponseRedirect, reverse and datetime and modified a few functions in views.py
+
+Finally, I connected ProductEntry model to the User model by linking each ProductEntry object created to the user who made it so that an authorized user only sees entries they created.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 assignment 3
 1. Enables communication between different parts of the system and between platforms and users. It forms the backbone of communication in any platform, ensuring that information flows seamlessly across all components.
 
