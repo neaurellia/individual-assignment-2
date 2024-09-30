@@ -1,3 +1,262 @@
+assignment 5
+1. If there are multiple CSS selectors for an HTML element, explain the priority order of these CSS selectors!
+
+3 types of selectors: element, ID, class
+element: change properties for all elements that have the same HTML tag, can be used as a selector in the CSS file, uses format [id_name]
+
+ID: uses ID on the tag as selector, unique in one web page, can be added to HTML template page, Then, we can use that ID as a selector in the CSS file. ID selector uses the format #[id_name] (always preceded by #)
+
+class: allows us to group elements with the same characteristics, then we use class as selector in css
+
+
+2. Why does responsive design become an important concept in web application development? Give examples of applications that have and have not implemented responsive design!
+
+3. ![alt text](image-1.png)
+margin: the transparent area outside the border, the margin property also affects the total space that the box will take up on the page, but the margin is not included in the actual size of the box. The box's total width and height stops at the border.
+border: border that goes around the padding and content
+padding: transparent area around content
+
+div {
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+4. What is Flexbox?
+Flexbox (short for Flexible Box Layout) is a CSS layout model that allows you to design complex layouts with ease. It provides a more efficient way to align, distribute, and order items within a container, even when their sizes are unknown or dynamic.
+
+Core Concepts of Flexbox:
+Flex Container:
+
+The parent element that holds the flex items. You define a flex container by applying display: flex or display: inline-flex.
+Flex Items:
+
+These are the children of a flex container. Each child automatically becomes a flex item.
+Main Axis & Cross Axis:
+
+Main Axis: The primary axis along which flex items are placed. By default, this is horizontal (row direction).
+Cross Axis: Perpendicular to the main axis. If the main axis is horizontal, the cross axis is vertical.
+Direction:
+
+Flexbox allows you to control the direction of items using flex-direction. It can be:
+row (default)
+row-reverse
+column
+column-reverse
+Justify Content:
+
+Aligns items along the main axis using justify-content. Options include:
+flex-start
+flex-end
+center
+space-between
+space-around
+Align Items:
+
+Aligns items along the cross axis using align-items. Options include:
+flex-start
+flex-end
+center
+stretch
+baseline
+Flex Grow, Shrink, and Basis:
+
+Flex Grow: Defines how much a flex item can grow relative to the rest. Set using flex-grow.
+Flex Shrink: Defines how much a flex item can shrink if necessary. Set using flex-shrink.
+Flex Basis: Sets the initial size of the item before it grows or shrinks. Set using flex-basis.
+Align Self:
+
+Overrides the align-items property for a specific item. Allows for unique alignment of individual items.
+Flex Wrap:
+
+By default, flex items are placed in a single line. With flex-wrap, you can allow them to wrap into multiple lines (wrap, nowrap, wrap-reverse).
+Uses of Flexbox:
+Responsive design: Easily adapts elements to different screen sizes.
+Centering elements (both vertically and horizontally) without much complexity.
+Creating navigation bars, flexible galleries, card layouts, and other UI components.
+Ordering and aligning elements regardless of HTML structure.
+What is a Grid Layout?
+The CSS Grid Layout is a two-dimensional layout system designed to handle both rows and columns. Unlike Flexbox, which is primarily one-dimensional (either row-based or column-based), Grid allows you to control the placement of items along both the horizontal and vertical axes.
+
+Core Concepts of Grid Layout:
+Grid Container:
+
+The parent element that holds grid items. You define a grid container by applying display: grid or display: inline-grid.
+Grid Items:
+
+The children of the grid container. Each child automatically becomes a grid item.
+Grid Lines:
+
+The dividing lines that define the rows and columns.
+Grid Tracks (Rows and Columns):
+
+A grid track is the space between two grid lines. Grid tracks are defined using grid-template-rows and grid-template-columns.
+Grid Cells:
+
+The space between any four grid lines (the intersection of a row and a column) is a grid cell.
+Grid Areas:
+
+You can name areas of your grid, which allow you to place items into those predefined areas using the grid-area property.
+Gaps:
+
+The space between rows and columns, which can be adjusted using grid-gap, grid-row-gap, and grid-column-gap.
+Auto-placement:
+
+Items are automatically placed on the grid in available cells unless otherwise specified using explicit positioning.
+Explicit vs. Implicit Grids:
+
+Explicit Grid: You explicitly define the number of rows and columns.
+Implicit Grid: Grid can automatically generate additional rows or columns if the content requires it.
+Grid Template:
+
+Allows you to define the structure of the grid using the grid-template property, which sets up the rows, columns, and grid areas all at once.
+Justify and Align Items:
+
+Align items along the horizontal and vertical axes within the grid container using justify-items, align-items, and similar properties for individual items like justify-self, align-self.
+Uses of Grid Layout:
+Complex web layouts (e.g., page layouts with headers, footers, sidebars, and main content areas).
+Building fully responsive designs with precise control over how elements are sized and positioned.
+Creating dashboard-style layouts with multiple, aligned components.
+Layouts where both horizontal and vertical placement of items is needed.
+Flexbox vs. Grid Layout: Key Differences
+Flexbox is a one-dimensional layout model (row or column), while Grid is two-dimensional (rows and columns).
+Flexbox is generally better for simple layouts or aligning items along a single axis. Grid is more powerful for complex, large-scale layouts where control over both axes is needed.
+Flexbox is often used inside components, while Grid is typically used for structuring the overall page layout. However, they can be combined for more flexibility in design.
+When to Use Flexbox:
+When you need to align items along a single row or column.
+When you need to control the order of items based on screen size.
+Ideal for navigation bars, button groups, and centering elements.
+When to Use Grid:
+When you need a complex, multi-dimensional layout.
+When you want to control both row and column positioning.
+Useful for page layouts, card-based designs, and organizing content-heavy pages.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+assignment 4
+1. HttpResponseRedirect() is a class in Django that is used to perform a manual redirect to a different URL. It takes a URL as an argument and sends a response telling the browser to navigate to that URL.
+
+redirect() is a convenience function provided by Django that abstracts away the lower-level HttpResponseRedirect(). It can accept not only a URL string but also a view name or even an object, making it more flexible.
+
+2. In Django, a foreign key relationship can link MoodEntry model and User model as so:
+user = models.ForeignKey(User, on_delete=models.CASCADE)
+This creates a relationship where each mmood entry is related to a specific user to retrieve all mood entries made by user.
+
+3. Authentication: process of verifying who a user is
+Authorization: process of determining what an authenticated user is allowed to do
+
+4. Django stores data on the server and a session ID in a cookie on the user's browser. Every time the user makes a request, the session ID is sent along with it, allowing Django to recognize the user as logged in.
+
+Other uses of cookies:
+- Tracking user preferences: Cookies can be used to store user preferences, such as language settings or dark mode preferences.
+- Cart functionality: In e-commerce sites, cookies can track the items added to a user's shopping cart.
+- Analytics and tracking: Cookies are used for analytics purposes to track user behavior and activity on a website.
+
+Not all cookies are safe, especially when dealing with sensitive information. 
+
+5. First I implemented function and registration forms by adding the registration form and created the register mechanism. This is done by editing views.py and urls.py and creating register.html.
+
+Next, I implemented a login function by importing authenticate, login and AuthenticationForm (built-in Django functions) in views.py and adding a login_user function to authenticate users to log in. Then, I created login.html and edited urls.py as needed.
+
+After that, I implemented a logout function by editing and importing logout in views.py. I also implemented the logout mechanism by creating a logout_user function, then I edited main.html so that it would link to the URL based on app_name and name defined in urls.py. I then edited urls.py as needed
+
+I also restricted access to the main page then used data from cookies by importing HttpResponseRedirect, reverse and datetime and modified a few functions in views.py
+
+Finally, I connected ProductEntry model to the User model by linking each ProductEntry object created to the user who made it so that an authorized user only sees entries they created.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+assignment 3
+1. Enables communication between different parts of the system and between platforms and users. It forms the backbone of communication in any platform, ensuring that information flows seamlessly across all components.
+
+2. JSON is generally better for web applications because it is:
+- simpler, more compact syntax compared to XML.
+- easier and faster to parse, especially in JavaScript.
+- JSON data is easy for both humans and machines to read.
+
+XML may be better for complex documents and data interchange where the structure needs to be more rigorous:
+- more flexible with its support for attributes and nested elements, making it useful for defining complex data structures.
+- XML supports namespaces, which helps in differentiating similar data fields in large documents.
+
+JSON is more popular than XML because:
+- JSON is faster to parse and generate than XML.
+- JSON's minimal syntax makes it easier to write, read, and debug. This is a key reason for its widespread adoption in modern APIs.
+- JSON is directly compatible with JavaScript, the most widely used language for web development, making it a natural choice for web applications.
+-  JSON is more concise, requiring fewer characters to represent data than XML
+
+3. The is_valid() method in Django forms checks whether the form data is valid by:
+- Validating Data: It runs through all field validators and ensures that the data conforms to the rules defined in the form’s fields (e.g., required fields, data types, and length constraints).
+- Cleaning Data: After validation, the is_valid() method stores the cleaned data in form.cleaned_data for further processing (e.g., saving to the database).
+- Returns a Boolean: If the data is valid, it returns True; otherwise, it returns False and stores error messages in form.errors.
+
+Why Do We Need is_valid()?
+- Error Handling: It prevents invalid or incomplete data from being processed and provides users with informative error messages to fix issues in form submission.
+- Security: Validating data before processing ensures that only clean, expected data is accepted, reducing the risk of malicious input or data corruption.
+
+4. - prevent attackers from submitting forms on behalf of users.
+- avoid exploitation of authenticated user's session and take over sensitive operations
+
+5. Compare them with tutorial 2 and implement them. First I implemented the Skeleton of a View, then changed the Primary Key from integer to UUID, then I created as form input data and displayed data on HTML. Next I returned data in both XML and JSON format and did it based on an ID, then I used Postman as a data viewer and deployed to PWS
+
+![WhatsApp Image 2024-09-18 at 11 21 39_39d33e01](https://github.com/user-attachments/assets/0d7c5adb-a8ab-4c6a-a41e-a48a0ff8ca58)
+![WhatsApp Image 2024-09-18 at 11 22 04_87fd11b8](https://github.com/user-attachments/assets/a1c0bdab-6607-4e32-8ac7-ff4706507863)
+![WhatsApp Image 2024-09-18 at 11 22 45_e458d2f4](https://github.com/user-attachments/assets/7fcac5c7-78f9-4ca2-99db-c6fe57466c67)
+![WhatsApp Image 2024-09-18 at 11 23 14_1c26978f](https://github.com/user-attachments/assets/c5ea2597-bafb-478f-970e-651ba471b8c8)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+assignment 2
 1. First, I figured out to combine Tutorial 0 and 1 for this assignment, then after comparing the checklist and the tutorial, I simply followed the tutorials with the checklist as my guideline and made changes where necessary. I created a new repository for the new project and many folders and files inside folders as shown in the checklist, I then performed routing and created a model. I had to adjust here and for the function in views.py as well. I then created a routing in urls.py for the application main to map the function created in views.py then deployed to PWS.
 
 2. <img width="286" alt="image" src="https://github.com/user-attachments/assets/c88d1e20-4970-46e5-bdc2-6fdececffa90">
@@ -14,3 +273,5 @@
 6. It allows developers to interact with the database using Python objects rather than writing raw SQL queries. This way, it reduces errors in database interactions.
 
 link:
+
+

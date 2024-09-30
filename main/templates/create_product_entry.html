@@ -1,18 +1,43 @@
-{% extends 'base.html' %} 
-{% block content %}
-<h1>Add Package</h1>
+{% extends 'base.html' %}
+{% load static %}
+{% block meta %}
+<title>Add Product</title>
+{% endblock meta %}
 
-<form method="POST">
-  {% csrf_token %}
-  <table>
-    {{ form.as_table }}
-    <tr>
-      <td></td>
-      <td>
-        <input type="submit" value="Add Package" />
-      </td>
-    </tr>
-  </table>
-</form>
+{% block content %}
+{% include 'navbar.html' %}
+
+<div class="flex flex-col min-h-screen bg-black">
+  <div class="container mx-auto px-4 py-8 mt-16 max-w-xl">
+    <h1 class="text-3xl font-bold text-center mb-8 text-neon-blue">Add Product</h1>
+  
+    <div class="bg-neon-purple shadow-md rounded-lg p-6 form-style border-2 border-neon-pink">
+      <form method="POST" class="space-y-6">
+        {% csrf_token %}
+        {% for field in form %}
+          <div class="flex flex-col">
+            <label for="{{ field.id_for_label }}" class="mb-2 font-semibold text-neon-pink">
+              {{ field.label }}
+            </label>
+            <div class="w-full">
+              {{ field|add_class:"bg-neon-blue text-white placeholder-neon-yellow" }}
+            </div>
+            {% if field.help_text %}
+              <p class="mt-1 text-sm text-neon-yellow">{{ field.help_text }}</p>
+            {% endif %}
+            {% for error in field.errors %}
+              <p class="mt-1 text-sm text-red-500">{{ error }}</p>
+            {% endfor %}
+          </div>
+        {% endfor %}
+        <div class="flex justify-center mt-6">
+          <button type="submit" class="bg-neon-pink text-black font-semibold px-6 py-3 rounded-lg hover:bg-neon-orange transition duration-300 ease-in-out w-full transform hover:-translate-y-1 hover:scale-105">
+            Create Product Entry
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 {% endblock %}
