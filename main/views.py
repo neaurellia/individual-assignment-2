@@ -10,6 +10,7 @@ from django.contrib.auth.decorators import login_required
 import datetime
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.shortcuts import reverse
 
 @login_required(login_url='/login')
 def show_main(request):
@@ -86,3 +87,24 @@ def create_product_entry(request):
     
     context = {'form': form}
     return render(request, "create_product_entry.html", context)
+
+def edit_product(request, id):
+    product = Product.objects.get(pk = id)
+
+    form = ProductForm(request.POST or None, instance=product)
+
+    if form.is_valid() and request.method == "POST":
+        # Save form and return to home page
+        form.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+
+    context = {'form': form}
+    return render(request, "edit_product.html", context)
+
+def delete_product(request, id):
+    # Get mood based on id
+    product = Product.objects.get(pk = id)
+    # Delete mood
+    product.delete()
+    # Return to home page
+    return HttpResponseRedirect(reverse('main:show_main'))

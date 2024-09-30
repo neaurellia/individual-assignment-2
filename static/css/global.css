@@ -1,0 +1,21 @@
+/* Neon colors */
+.text-neon-pink { color: #ff007f; }
+.text-neon-blue { color: #00e6ff; }
+
+/* Glowing text */
+.glow-text {
+  text-shadow: 0 0 10px #fff, 0 0 20px currentColor, 0 0 30px currentColor;
+}
+
+/* Glowing buttons */
+.glow-button {
+  box-shadow: 0 0 10px #fff, 0 0 20px currentColor, 0 0 30px currentColor;
+  transition: 0.3s;
+}
+.glow-button:hover {
+  box-shadow: 0 0 20px #fff, 0 0 40px currentColor, 0 0 60px currentColor;
+}
+
+body {
+    background: black url('/static/images/neon-grid.png') center center / cover no-repeat;
+  }
