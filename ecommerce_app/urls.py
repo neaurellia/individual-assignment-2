@@ -16,14 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from main.views import edit_product
-from main.views import delete_product
 
 app_name='main'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
-    path('edit-product/<uuid:id>', edit_product, name='edit_product'),
-    path('delete/<uuid:id>', delete_product, name='delete_product'),
 ]

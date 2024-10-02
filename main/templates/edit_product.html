@@ -1,43 +1,41 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block meta %}
-<title>Edit Product</title>
+<title>EDIT PACKAGE</title>
 {% endblock meta %}
 
 {% block content %}
 {% include 'navbar.html' %}
-
-<div class="flex flex-col min-h-screen bg-black">
+<div class="flex flex-col min-h-screen bg-gray-950">
   <div class="container mx-auto px-4 py-8 mt-16 max-w-xl">
-    <h1 class="text-3xl font-bold text-center mb-8 text-neon-blue">Edit Product Entry</h1>
-
-    <div class="bg-neon-purple rounded-lg p-6 form-style border-2 border-neon-pink">
+    <h1 class="text-3xl font-bold text-center mb-8 text-pink-300">EDIT PACKAGE</h1>
+  
+    <div class="bg-gray-950 rounded-lg p-6 form-style">
       <form method="POST" class="space-y-6">
           {% csrf_token %}
           {% for field in form %}
               <div class="flex flex-col">
-                  <label for="{{ field.id_for_label }}" class="mb-2 font-semibold text-neon-pink">
+                  <label for="{{ field.id_for_label }}" class="mb-2 font-semibold text-gray-200">
                       {{ field.label }}
                   </label>
                   <div class="w-full">
-                      {{ field|add_class:"bg-neon-blue text-white placeholder-neon-yellow" }}
+                      {{ field }}
                   </div>
                   {% if field.help_text %}
-                      <p class="mt-1 text-sm text-neon-yellow">{{ field.help_text }}</p>
+                      <p class="mt-1 text-sm text-gray-500">{{ field.help_text }}</p>
                   {% endif %}
                   {% for error in field.errors %}
-                      <p class="mt-1 text-sm text-red-500">{{ error }}</p>
+                      <p class="mt-1 text-sm text-red-600">{{ error }}</p>
                   {% endfor %}
               </div>
           {% endfor %}
           <div class="flex justify-center mt-6">
-              <button type="submit" class="bg-neon-pink text-black font-semibold px-6 py-3 rounded-lg hover:bg-neon-orange transition duration-300 ease-in-out w-full transform hover:-translate-y-1 hover:scale-105">
-                  Edit Product Entry
+              <button type="submit" class="bg-pink-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-pink-700 transition duration-300 ease-in-out w-full">
+                  EDIT PACKAGE
               </button>
           </div>
       </form>
   </div>
   </div>
 </div>
-
 {% endblock %}

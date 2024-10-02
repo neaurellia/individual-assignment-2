@@ -5,11 +5,11 @@
 {% endblock meta %}
 
 {% block content %}
-<div class="min-h-screen flex items-center justify-center w-screen bg-black py-12 px-4 sm:px-6 lg:px-8">
+<div class="min-h-screen flex items-center justify-center w-screen bg-gray-950 py-12 px-4 sm:px-6 lg:px-8">
   <div class="max-w-md w-full space-y-8">
     <div>
-      <h2 class="mt-6 text-center text-neon-pink text-3xl font-extrabold">
-        Login to your account
+      <h2 class="mt-6 text-center text-purple text-3xl font-extrabold text-purple-300">
+        LOGIN TO YOUR ACCOUNT
       </h2>
     </div>
     <form class="mt-8 space-y-6" method="POST" action="">
@@ -18,17 +18,17 @@
       <div class="rounded-md shadow-sm -space-y-px">
         <div>
           <label for="username" class="sr-only">Username</label>
-          <input id="username" name="username" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-700 placeholder-neon-pink text-neon-blue rounded-t-md bg-black focus:outline-none focus:ring-neon-pink focus:border-neon-pink focus:z-10 sm:text-sm" placeholder="Username">
+          <input id="username" name="username" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-950 placeholder-gray-950 text-zinc-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Username">
         </div>
         <div>
           <label for="password" class="sr-only">Password</label>
-          <input id="password" name="password" type="password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-700 placeholder-neon-pink text-neon-blue rounded-b-md bg-black focus:outline-none focus:ring-neon-pink focus:border-neon-pink focus:z-10 sm:text-sm" placeholder="Password">
+          <input id="password" name="password" type="password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-950 placeholder-gray-950 text-zinc-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
         </div>
       </div>
 
       <div>
-        <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-black bg-neon-pink hover:bg-neon-blue focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neon-pink">
-          Sign in
+        <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-purple-400 hover:bg-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          Sign In
         </button>
       </div>
     </form>
@@ -37,7 +37,7 @@
     <div class="mt-4">
       {% for message in messages %}
       {% if message.tags == "success" %}
-            <div class="bg-neon-blue border border-neon-pink text-neon-pink px-4 py-3 rounded relative" role="alert">
+            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
                 <span class="block sm:inline">{{ message }}</span>
             </div>
         {% elif message.tags == "error" %}
@@ -45,7 +45,7 @@
                 <span class="block sm:inline">{{ message }}</span>
             </div>
         {% else %}
-            <div class="bg-neon-blue border border-neon-pink text-neon-pink px-4 py-3 rounded relative" role="alert">
+            <div class="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded relative" role="alert">
                 <span class="block sm:inline">{{ message }}</span>
             </div>
         {% endif %}
@@ -54,9 +54,9 @@
     {% endif %}
 
     <div class="text-center mt-4">
-      <p class="text-sm text-neon-pink">
+      <p class="text-sm text-white">
         Don't have an account yet?
-        <a href="{% url 'main:register' %}" class="font-medium text-neon-blue hover:text-neon-pink">
+        <a href="{% url 'main:register' %}" class="font-medium text-purple-300 hover:text-purple-500">
           Register Now
         </a>
       </p>

@@ -1,15 +1,13 @@
 assignment 5
-1. If there are multiple CSS selectors for an HTML element, explain the priority order of these CSS selectors!
+1. 1. Inline styles (applied directly in the HTML element using style attribute)
+  2. ID selectors (#id_name), must be unique within the entire document
+  3. Class selectors(.class_name) or attribute selectors(ex: [type="text]) and pseudo-classes(ex: :hover)
+  4. Element selectors(ex: p, div, etc.), applies to all elements of specified type
+If selectors have the same specificity, the last one defined in the CSS file will be applied
 
-3 types of selectors: element, ID, class
-element: change properties for all elements that have the same HTML tag, can be used as a selector in the CSS file, uses format [id_name]
-
-ID: uses ID on the tag as selector, unique in one web page, can be added to HTML template page, Then, we can use that ID as a selector in the CSS file. ID selector uses the format #[id_name] (always preceded by #)
-
-class: allows us to group elements with the same characteristics, then we use class as selector in css
-
-
-2. Why does responsive design become an important concept in web application development? Give examples of applications that have and have not implemented responsive design!
+2. Responsive design makes web applications adapt to different screen and device sizes by using flexible layouts, images, and CSS media queries.
+Applications with responsive design: Twitter, TikTok, Instagram, YouTube
+Applications without responsive design: older government sites
 
 3. ![alt text](image-1.png)
 margin: the transparent area outside the border, the margin property also affects the total space that the box will take up on the page, but the margin is not included in the actual size of the box. The box's total width and height stops at the border.
@@ -22,114 +20,75 @@ div {
   padding: 50px;
   margin: 20px;
 }
-4. What is Flexbox?
-Flexbox (short for Flexible Box Layout) is a CSS layout model that allows you to design complex layouts with ease. It provides a more efficient way to align, distribute, and order items within a container, even when their sizes are unknown or dynamic.
+
+4. Flexbox (Flexible Box Layout) is a one-dimensional CSS layout model that allows you to arrange items in a row or column. It designs complex layouts with ease. It provides a more efficient way to align, distribute, and order items within a container, even when their sizes are unknown or dynamic, ideal for navigation bars, buttons, and lists.
 
 Core Concepts of Flexbox:
-Flex Container:
+1. Flex Container and Items
+- Flex container: The parent element that has display: flex or display: inline-flex. It defines a flex context for its direct children.
+- Flex items: The direct child elements of a flex container, which are laid out according to the flexbox rules.
+2. Main and Cross Axis
+- Main: Primary axis
+- Cross: perpendicular to main axix (if main is horizontal, cross is vertical and vice versa)
+3. Flex Properties for Container
+- Flex-direction: Defines the direction in which flex items are placed within the container. (row, row-reverse, column, column-reverse)
+- Flex-wrap: Controls whether flex items wrap onto multiple lines (nowrap, wrap, wrap-reverse)
+- Justify-content: Aligns items along the main axis (horizontal by default). (flex-start, flex-end, center, space-between, space-around, space-evenly)
+- Align-items: Aligns items along the cross axis(flex-start, flex-end, center, baseline)
+- Align-content: Aligns rows of flex items when there is extra space on the cross axis (flex-start, flex-end, center, space-between, space-around, stretch)
+4. Flex Properties for Items
+- Order: Changes the order of individual flex items.
+- flex-grow: Specifies how much a flex item should grow relative to the others in the container
+- flex-shrink: Specifies how much a flex item should shrink relative to the others when space is limited
+- flex-basis: Defines the initial size of the flex item before growing or shrinking is applied.
+- align-self: Overrides the align-items property for individual flex items. (auto, flex-start, flex-end, center, baseline, stretch)
+5. Flex shorthand: combines flex-grow, flex-shrink, and flex-basis into one property
 
-The parent element that holds the flex items. You define a flex container by applying display: flex or display: inline-flex.
-Flex Items:
-
-These are the children of a flex container. Each child automatically becomes a flex item.
-Main Axis & Cross Axis:
-
-Main Axis: The primary axis along which flex items are placed. By default, this is horizontal (row direction).
-Cross Axis: Perpendicular to the main axis. If the main axis is horizontal, the cross axis is vertical.
-Direction:
-
-Flexbox allows you to control the direction of items using flex-direction. It can be:
-row (default)
-row-reverse
-column
-column-reverse
-Justify Content:
-
-Aligns items along the main axis using justify-content. Options include:
-flex-start
-flex-end
-center
-space-between
-space-around
-Align Items:
-
-Aligns items along the cross axis using align-items. Options include:
-flex-start
-flex-end
-center
-stretch
-baseline
-Flex Grow, Shrink, and Basis:
-
-Flex Grow: Defines how much a flex item can grow relative to the rest. Set using flex-grow.
-Flex Shrink: Defines how much a flex item can shrink if necessary. Set using flex-shrink.
-Flex Basis: Sets the initial size of the item before it grows or shrinks. Set using flex-basis.
-Align Self:
-
-Overrides the align-items property for a specific item. Allows for unique alignment of individual items.
-Flex Wrap:
-
-By default, flex items are placed in a single line. With flex-wrap, you can allow them to wrap into multiple lines (wrap, nowrap, wrap-reverse).
 Uses of Flexbox:
-Responsive design: Easily adapts elements to different screen sizes.
-Centering elements (both vertically and horizontally) without much complexity.
-Creating navigation bars, flexible galleries, card layouts, and other UI components.
-Ordering and aligning elements regardless of HTML structure.
-What is a Grid Layout?
+- Responsive design: Easily adapts elements to different screen sizes.
+- Centering elements (both vertically and horizontally) without much complexity.
+- Creating navigation bars, flexible galleries, card layouts, and other UI components.
+- Ordering and aligning elements regardless of HTML structure.
+
 The CSS Grid Layout is a two-dimensional layout system designed to handle both rows and columns. Unlike Flexbox, which is primarily one-dimensional (either row-based or column-based), Grid allows you to control the placement of items along both the horizontal and vertical axes.
 
 Core Concepts of Grid Layout:
-Grid Container:
+1. Grid Container: The parent element that holds grid items. You define a grid container by applying display: grid or display: inline-grid.
+2. Grid Items: The children of the grid container. Each child automatically becomes a grid item.
+3. Grid Lines: The dividing lines that define the rows and columns.
+4. Grid Tracks (Rows and Columns): A grid track is the space between two grid lines. Grid tracks are defined using grid-template-rows and grid-template-columns.
+5. Grid Cells: The space between any four grid lines (the intersection of a row and a column) is a grid cell.
+6. Grid Areas: You can name areas of your grid, which allow you to place items into those predefined areas using the grid-area property.
+7. Gaps: The space between rows and columns, which can be adjusted using grid-gap, grid-row-gap, and grid-column-gap.
+8. Auto-placement: Items are automatically placed on the grid in available cells unless otherwise specified using explicit positioning.
+9. Explicit Grid: You explicitly define the number of rows and columns.
+10. Implicit Grid: Grid can automatically generate additional rows or columns if the content requires it.
+11. Grid Template: Allows you to define the structure of the grid using the grid-template property, which sets up the rows, columns, and grid areas all at once.
+12. Justify and Align Items: Align items along the horizontal and vertical axes within the grid container using justify-items, align-items, and similar properties for individual items like justify-self, align-self.
 
-The parent element that holds grid items. You define a grid container by applying display: grid or display: inline-grid.
-Grid Items:
-
-The children of the grid container. Each child automatically becomes a grid item.
-Grid Lines:
-
-The dividing lines that define the rows and columns.
-Grid Tracks (Rows and Columns):
-
-A grid track is the space between two grid lines. Grid tracks are defined using grid-template-rows and grid-template-columns.
-Grid Cells:
-
-The space between any four grid lines (the intersection of a row and a column) is a grid cell.
-Grid Areas:
-
-You can name areas of your grid, which allow you to place items into those predefined areas using the grid-area property.
-Gaps:
-
-The space between rows and columns, which can be adjusted using grid-gap, grid-row-gap, and grid-column-gap.
-Auto-placement:
-
-Items are automatically placed on the grid in available cells unless otherwise specified using explicit positioning.
-Explicit vs. Implicit Grids:
-
-Explicit Grid: You explicitly define the number of rows and columns.
-Implicit Grid: Grid can automatically generate additional rows or columns if the content requires it.
-Grid Template:
-
-Allows you to define the structure of the grid using the grid-template property, which sets up the rows, columns, and grid areas all at once.
-Justify and Align Items:
-
-Align items along the horizontal and vertical axes within the grid container using justify-items, align-items, and similar properties for individual items like justify-self, align-self.
 Uses of Grid Layout:
-Complex web layouts (e.g., page layouts with headers, footers, sidebars, and main content areas).
-Building fully responsive designs with precise control over how elements are sized and positioned.
-Creating dashboard-style layouts with multiple, aligned components.
-Layouts where both horizontal and vertical placement of items is needed.
+- Complex web layouts (e.g., page layouts with headers, footers, sidebars, and main content areas).
+- Building fully responsive designs with precise control over how elements are sized and positioned.
+- Creating dashboard-style layouts with multiple, aligned components.
+- Layouts where both horizontal and vertical placement of items is needed.
+
 Flexbox vs. Grid Layout: Key Differences
-Flexbox is a one-dimensional layout model (row or column), while Grid is two-dimensional (rows and columns).
-Flexbox is generally better for simple layouts or aligning items along a single axis. Grid is more powerful for complex, large-scale layouts where control over both axes is needed.
-Flexbox is often used inside components, while Grid is typically used for structuring the overall page layout. However, they can be combined for more flexibility in design.
+- Flexbox is a one-dimensional layout model (row or column), while Grid is two-dimensional (rows and columns).
+- Flexbox is generally better for simple layouts or aligning items along a single axis. Grid is more powerful for complex, large-scale layouts where control over both axes is needed.
+- Flexbox is often used inside components, while Grid is typically used for structuring the overall page layout. However, they can be combined for more flexibility in design.
+
 When to Use Flexbox:
-When you need to align items along a single row or column.
-When you need to control the order of items based on screen size.
-Ideal for navigation bars, button groups, and centering elements.
+- When you need to align items along a single row or column.
+- When you need to control the order of items based on screen size.
+- Ideal for navigation bars, button groups, and centering elements.
+
 When to Use Grid:
-When you need a complex, multi-dimensional layout.
-When you want to control both row and column positioning.
-Useful for page layouts, card-based designs, and organizing content-heavy pages.
+- When you need a complex, multi-dimensional layout.
+- When you want to control both row and column positioning.
+- Useful for page layouts, card-based designs, and organizing content-heavy pages.
+
+
+5. First we add tailwind, then add features such as edit and delete product, then we add navigation bar, then configure static files then edit css to our liking.
 
 
 
