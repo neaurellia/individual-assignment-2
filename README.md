@@ -1,3 +1,47 @@
+assignment 6
+1. JavaScript can be used to create dynamic and interactive web applications.
+- JS allows developers to create interactive user interfaces that respond to user actions in real time without refreshing the page
+- JS works on all modern browsers, hence it is more accessible to a wider audience
+- The JS ecosystem includes libraries and frameworks like React, Vue.js and Angular to help streamline development and provide reusable components
+- Can also be used for server-side programming
+
+2. We need the await keyword to wait for a Promise to resolve or reject before continuing execution. We want to wait for the response when calling fetch() before proceeding with further logic. Otherwise, it can lead to undefined values or errors or async challenges.
+
+3. csrf_exempt disables Django's Cross-Site Request Forgery protection for the specific view it's applied to. This is needed for AJAX POST requests because:
+- AJAX requests might not include the necessary CSRF token
+- Simplifies testing by bypassing the CSRF check in development or when external clients are involved.
+
+4. - Front-end validation can be easily bypassed by attackers using Postman or by disabling JavaScript
+- Backend sanitization ensures that even if malicious data is sent, it will be cleaned or rejected
+- Ensures consistent processing of data across all platforms because different browsers may interpret front-end validation differently
+
+5. First we add error message to Login, then we create a function to Add Product Order with AJAX. Next, we add routing for said function and display the Product Entry data with fetch() API. After that, we create Modal as a form to Add Product and we add data product with AJAX. Next, we protect the app from XSS by adding strip_tags to "clean up" new data and sanitize data with DOMPurify.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 assignment 5
 1. 1. Inline styles (applied directly in the HTML element using style attribute)
   2. ID selectors (#id_name), must be unique within the entire document
