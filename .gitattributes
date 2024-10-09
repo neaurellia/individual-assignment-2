@@ -1,0 +1,16 @@
+# Handle line endings for Python files
+*.py text eol=lf
+
+# Ensure text files use LF endings
+*.txt text eol=lf
+*.md text eol=lf
+
+# Handle line endings for other types of files
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+
+# Ignore binaries
+*.png binary
+*.jpg binary
+*.gif binary
