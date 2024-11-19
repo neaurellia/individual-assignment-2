@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from main.forms import ProductForm
 from main.models import Product
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.core import serializers
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
@@ -14,6 +14,8 @@ from django.shortcuts import reverse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 from django.utils.html import strip_tags
+import json
+
 
 @login_required(login_url='/login')
 def show_main(request):
@@ -117,6 +119,23 @@ def delete_product(request, id):
     return HttpResponseRedirect(reverse('main:show_main'))
 
 @csrf_exempt
+def create_mood_flutter(request):
+    if request.method == 'POST':
+
+        data = json.loads(request.body)
+        new_product = Product.objects.create(
+            user=request.user,
+            name=data["name"],
+            price=int(data["price"]),
+            description=data["description"]
+        )
+
+        new_product.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
+    
 @require_POST
 def add_product_entry_ajax(request):
     product = strip_tags(request.POST.get("product"))
